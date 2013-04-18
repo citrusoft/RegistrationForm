@@ -1,0 +1,29 @@
+<h1>Member Registration</h1>
+<hr>
+<%= form_for @member do |f| -%>
+    First Name: <%= f.text_field :fname %><br />
+    Last Name : <%= f.text_field :lname %><br />
+    Email     : <%= f.text_field :email %><br />
+    Telephone : <%= f.text_field :phone %><br />
+  <%= f.submit %>
+<% end -%>
+<hr>
+<h3>Members</h3>
+<% if !@members.blank? %>
+	<table border=1 class="data">
+	<tr>
+		<th>Name</th>
+		<th>Telephone</th>
+		<th>Email</th>
+	</tr>
+	<% for item in @members %>
+    	<tr>
+		<td> <%= item.lname %>,<%= item.fname %>  </td>
+		<td> <%= item.phone %>  </td>
+		<td> <%= item.email %>  </td>
+	</tr>
+	<% end %>
+	</table>
+<% else %>
+<% end %>
+
